@@ -20,6 +20,18 @@ This tool was designed to be fast and intuitive, solving common problems like ex
 
 ---
 
+## 🚀 Quick Start (For Users)
+This is the easiest way to use the application without any programming knowledge.
+
+1. Download `Image to EPUB Converter.exe`.
+2. Double-click it to run.
+3. Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
+4. Drag and drop your image folders into the application window.
+5. Click the `Convert to EPUB` button and choose where to save your files.
+6. Enjoy!
+
+---
+
 ## ❤️ Support This Project
 If you find this application useful, please consider supporting its development by buying me a coffee!
 
