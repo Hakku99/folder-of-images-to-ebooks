@@ -4,7 +4,7 @@ A user-friendly desktop application to convert folders of images (like comics or
 
 This tool was designed to be fast and intuitive, solving common problems like extra blank pages and confusing chapter breaks.
 
-![App Screenshot](https://i.imgur.com/uG9Z4vX.png)
+![App Screenshot](./assets/image-to-epub-convert.jpg)
 
 ---
 
