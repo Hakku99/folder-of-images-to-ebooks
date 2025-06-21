@@ -34,7 +34,7 @@ These instructions explain how to run the application directly from the source c
 First, clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git)
+git clone [https://github.com/Hakku99/folder-of-images-to-epub.git](https://github.com/Hakku99/folder-of-images-to-epub.git)
 cd YOUR_REPOSITORY
 ```
 
@@ -61,9 +61,9 @@ pip install -r requirements.txt
 Once the dependencies are installed, you can run the application with this command:
 
 ```bash
-python image_to_epub.py
+python image-to-epub.py
 ```
-*(This assumes your main Python script is named `image_to_epub.py`)*
+*(This assumes your main Python script is named `image-to-epub.py`)*
 
 The application's graphical user interface should now appear.
 
@@ -86,7 +86,7 @@ pip install pyinstaller
 From your terminal, in the project's root directory, run the following command:
 
 ```bash
-pyinstaller --onefile --windowed --name="Image_to_EPUB_Converter" --icon=icon.ico image_to_epub.py
+pyinstaller --onefile --windowed --name="Image_to_EPUB_Converter" --icon=icon.ico image-to-epub.py
 ```
 **Command Breakdown:**
 -   `--onefile`: Bundles everything into a single executable file.
