@@ -20,6 +20,13 @@ This tool was designed to be fast and intuitive, solving common problems like ex
 
 ---
 
+## ❤️ Support This Project
+If you find this application useful, please consider supporting its development by buying me a coffee!
+
+[![Buy Me a Coffee at ko-fi.com](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/hakku99)
+
+---
+
 ## 🚀 Installation & Usage (From Source)
 
 These instructions explain how to run the application directly from the source code.
