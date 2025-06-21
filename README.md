@@ -34,8 +34,8 @@ These instructions explain how to run the application directly from the source c
 First, clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/Hakku99/folder-of-images-to-epub.git](https://github.com/Hakku99/folder-of-images-to-epub.git)
-cd YOUR_REPOSITORY
+git clone https://github.com/Hakku99/folder-of-images-to-epub.git
+cd folder-of-images-to-epub
 ```
 
 ### 2. Create `requirements.txt`
@@ -86,17 +86,17 @@ pip install pyinstaller
 From your terminal, in the project's root directory, run the following command:
 
 ```bash
-pyinstaller --onefile --windowed --name="Image_to_EPUB_Converter" --icon=icon.ico image-to-epub.py
+pyinstaller --onefile --windowed --name="Image to EPUB Converter" --icon=icon.ico image-to-epub.py
 ```
 **Command Breakdown:**
 -   `--onefile`: Bundles everything into a single executable file.
 -   `--windowed`: Prevents the command-line console from appearing when the app runs.
--   `--name="Image_to_EPUB_Converter"`: Sets the final name of your `.exe` file.
+-   `--name="Image to EPUB Converter"`: Sets the final name of your `.exe` file.
 -   `--icon=icon.ico`: (Optional) If you have an icon file named `icon.ico` in the same directory, this will set it as the application's icon.
 
 ### 3. Find Your Executable
 
-After the process completes, look for a new folder named `dist`. Your finished `Image_to_EPUB_Converter.exe` will be inside this folder.
+After the process completes, look for a new folder named `dist`. Your finished `Image to EPUB Converter.exe` will be inside this folder.
 
 ---
 
