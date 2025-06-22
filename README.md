@@ -103,7 +103,7 @@ The application's graphical user interface should now appear.
 
 ---
 
-## 📦 How to Compile into an EXE File
+## 📦 How to Compile Python program into an EXE File
 
 You can bundle this application into a single standalone executable (`.exe`) for Windows, so it can be run without needing Python installed.
 
