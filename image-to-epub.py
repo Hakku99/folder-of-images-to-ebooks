@@ -30,30 +30,21 @@ class Style:
 # --- CORE CONVERSION LOGIC ---
 def get_processed_image_bytes(image_path, log_callback):
     """
-    Processes an image to bytes.
-    - If the image is a JPEG, its original data is preserved to prevent re-compression.
-    - If it's another format (PNG, etc.), it's converted to a maximum-quality JPEG.
+    Processes an image to bytes, preserving original quality where possible.
     """
     try:
         with Image.open(image_path) as img:
-            # For existing JPEGs, read raw bytes to avoid any quality loss from re-saving.
             if img.format == 'JPEG':
                 log_callback(f"    - Preserving original JPEG: {os.path.basename(image_path)}")
                 with open(image_path, 'rb') as f_in:
                     return f_in.read()
-            
-            # For non-JPEG images (PNG, WEBP, etc.), convert to a high-quality JPEG.
             else:
                 log_callback(f"    - Converting to max-quality JPEG: {os.path.basename(image_path)}")
-                # Ensure image is in a saveable mode (RGB)
-                if img.mode not in ('RGB', 'L'): # 'L' is for grayscale
+                if img.mode not in ('RGB', 'L'):
                     img = img.convert("RGB")
-                
                 buffer = BytesIO()
-                # Use quality=100 and subsampling=0 for the highest possible quality.
                 img.save(buffer, format='JPEG', quality=100, subsampling=0)
                 return buffer.getvalue()
-
     except Exception as e:
         log_callback(f"[ERROR] Could not process image file: {os.path.basename(image_path)}", Style.ERROR_COLOR)
         log_callback(traceback.format_exc(), Style.ERROR_COLOR)
@@ -85,7 +76,6 @@ def create_epub_from_folder(folder_path, output_dir, log_callback, progress_call
         epub_pages = []
 
         for idx, image_name in enumerate(image_files):
-            # No need to log here, the get_processed_image_bytes function will log its action.
             image_path = os.path.join(folder_path, image_name)
             
             image_data = get_processed_image_bytes(image_path, log_callback)
@@ -97,7 +87,39 @@ def create_epub_from_folder(folder_path, output_dir, log_callback, progress_call
             epub_img = epub.EpubItem(uid=f'image_{idx}', file_name=f'images/{new_filename}', media_type='image/jpeg', content=image_data)
             book.add_item(epub_img)
 
-            html_content = f'<html><head><title>Page {idx+1}</title><style>body{{margin:0;padding:0;}}img{{width:100vw;height:100vh;object-fit:contain;}}</style></head><body><img src="images/{new_filename}" alt="{new_filename}"/></body></html>'
+            # --- KEY CHANGE: Updated HTML and CSS for perfect image display ---
+            html_content = f'''
+            <!DOCTYPE html>
+            <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+            <head>
+                <title>Page {idx+1}</title>
+                <style type="text/css">
+                    @page {{
+                        padding: 0;
+                        margin: 0;
+                    }}
+                    body {{
+                        padding: 0;
+                        margin: 0;
+                        height: 100vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: black;
+                    }}
+                    img {{
+                        max-height: 100vh;
+                        max-width: 100vw;
+                        object-fit: contain;
+                        width: auto;
+                        height: auto;
+                    }}
+                </style>
+            </head>
+            <body>
+                <img src="images/{new_filename}" alt="Image {idx+1}"/>
+            </body>
+            </html>'''
             page = epub.EpubHtml(title=f'Page {idx+1}', file_name=f'page_{idx+1}.xhtml', content=html_content)
             
             page.properties.extend(['rendition:layout-pre-paginated', 'rendition:orientation-landscape', 'rendition:spread-both'])
@@ -127,7 +149,7 @@ def create_epub_from_folder(folder_path, output_dir, log_callback, progress_call
         log_callback(traceback.format_exc(), Style.ERROR_COLOR)
         progress_callback(0, is_folder_complete=True)
 
-# --- GUI Application (UI is unchanged) ---
+# --- GUI Application ---
 class App:
     def __init__(self, root):
         self.root = root
