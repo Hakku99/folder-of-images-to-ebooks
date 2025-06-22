@@ -20,15 +20,30 @@ This tool was designed to be fast and intuitive, solving common problems like ex
 
 ---
 
+## 📂 Supported File Formats
+The application can process all common image formats, including:
+- `jpg`
+- `jpeg`
+- `png`
+- `gif`
+- `bmp`
+- `webp`
+
+---
+
 ## 🚀 Quick Start (For Users)
 This is the easiest way to use the application without any programming knowledge.
 
-1. Download `Image to EPUB Converter.exe`.
-2. Double-click it to run.
-3. Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
-4. Drag and drop your image folders into the application window.
-5. Click the `Convert to EPUB` button and choose where to save your files.
-6. Enjoy!
+1. Download the Application:
+   - Go to the [Releases](https://github.com/Hakku99/folder-of-images-to-epub/releases) page of this repository.
+   - Under the `Latest Release`, find the `Assets` section and click on `Image to EPUB Converter.exe` to download it.
+2. Run the Application:
+   - Double-click the downloaded .exe file to run.
+   - Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
+3. Use the Converter:
+   - Drag and drop your image folders into the application window.
+   - Click the `Convert to EPUB button` and choose where to save your files.
+   - Enjoy!
 
 ---
 
