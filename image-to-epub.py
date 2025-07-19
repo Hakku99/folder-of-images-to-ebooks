@@ -13,13 +13,15 @@ class Style:
     THEMES = {
         'light': {
             'BG': '#ffffff', 'FG': '#000000', 'LIST_BG': '#f0f0f0', 'PLACEHOLDER_FG': '#777777',
-            'BTN_BG': '#007acc', 'BTN_FG': '#ffffff', 'BTN_ACTIVE': '#005f9e',
-            'FONT': ("Segoe UI", 10), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 9)
+            'BTN_BG': '#88B6F2', 'BTN_FG': '#ffffff', 'BTN_ACTIVE': '#9BC1F2',
+            'BTN_DISABLED_FG': '#aaaaaa',
+            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 11)
         },
         'dark': {
             'BG': '#2b2b2b', 'FG': '#e0e0e0', 'LIST_BG': '#3c3f41', 'PLACEHOLDER_FG': '#aaaaaa',
             'BTN_BG': '#888888', 'BTN_FG': '#ffffff', 'BTN_ACTIVE': '#666666',
-            'FONT': ("Segoe UI", 10), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 9)
+            'BTN_DISABLED_FG': '#aaaaaa',
+            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 11)
         }
     }
 
@@ -71,8 +73,7 @@ def create_epub(folder, out_dir, logger, progress, stop_flag):
 
     out_path = os.path.join(out_dir, f"{name}.epub")
     epub.write_epub(out_path, book)
-    logger(f"\u2713 Saved: {out_path}")
-    logger("Done.")
+    logger(f"✓ Saved: {out_path}")
 
 # --- CBZ Creation ---
 def create_cbz(folder, out_dir, logger, progress, stop_flag):
@@ -90,8 +91,7 @@ def create_cbz(folder, out_dir, logger, progress, stop_flag):
             img_name = f'{idx:03d}.jpg'
             cbz.writestr(img_name, data)
             progress(1)
-    logger(f"\u2713 Saved: {out_path}")
-    logger("Done.")
+    logger(f"✓ Saved: {out_path}")
 
 # --- Main App ---
 class App:
@@ -114,7 +114,7 @@ class App:
 
         tk.Label(top_frame, text="Images to E-Books Converter", font=self.style['FONT_TITLE'], bg=self.style['BG'], fg=self.style['FG']).pack(side='left')
 
-        self.theme_btn = tk.Button(top_frame, text="\ud83d\udca1" if self.theme == 'dark' else "\ud83c\udf19", command=self.toggle_theme, bg=self.style['BG'], fg=self.style['FG'], bd=0, font=("Segoe UI", 12))
+        self.theme_btn = tk.Button(top_frame, text="🌙" if self.theme == 'light' else "💡", command=self.toggle_theme, bg=self.style['BG'], fg=self.style['FG'], bd=0, font=("Segoe UI", 12))
         self.theme_btn.pack(side='right')
 
         fmt_frame = tk.Frame(self.root, bg=self.style['BG'])
@@ -202,7 +202,7 @@ class App:
         self.logs.insert(END, msg + "\n")
         self.logs.see(END)
         self.logs.config(state="disabled")
-        if msg == "Done.":
+        if msg in ["Done.", "Cancelled."]:
             self.progress["value"] = 0
             self.btn_convert.config(text="Start Converts")
 
@@ -220,7 +220,7 @@ class App:
         self.progress["value"] = 0
         self.progress["maximum"] = sum(len([f for f in os.listdir(folder) if f.lower().endswith(('jpg','jpeg','png','gif','bmp','webp'))]) for folder in folders)
 
-        self.btn_convert.config(state="disabled", text="Converting...")
+        self.btn_convert.config(state="disabled", text="Converting...", disabledforeground=self.style['BTN_DISABLED_FG'])
         self.btn_cancel.config(state="normal")
         self.stop_flag = False
 
@@ -236,11 +236,7 @@ class App:
             else:
                 create_cbz(folder, out_dir, self.log, self.update_progress, lambda: self.stop_flag)
 
-        if not self.stop_flag:
-            self.log("Done.")
-        else:
-            self.log("Cancelled.")
-
+        self.log("Done." if not self.stop_flag else "Cancelled.")
         self.btn_convert.config(state="normal", text="Start Converts")
         self.btn_cancel.config(state="disabled")
 
