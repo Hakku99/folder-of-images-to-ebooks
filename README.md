@@ -1,8 +1,8 @@
-# Image Folder to EPUB Converter
+# Image Folder to E-Books Converter
 
-A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless EPUB / CBZ files, perfectly formatted for e-readers like Kobo and Kindle.
+A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless `EPUB` / `CBZ` files, perfectly formatted for e-readers like Kobo and Kindle.
 
-![App Screenshot](./assets/image-to-epub-convert.jpg)
+![App Screenshot](./assets/image-to-ebooks-converter.jpg)
 
 ---
 
@@ -105,9 +105,9 @@ pip install -r requirements.txt
 Once the dependencies are installed, you can run the application with this command:
 
 ```bash
-python image-to-epub.py
+python image-to-ebooks.py
 ```
-*(This assumes your main Python script is named `image-to-epub.py`)*
+*(This assumes your main Python script is named `image-to-ebooks.py`)*
 
 The application's graphical user interface should now appear.
 
@@ -130,17 +130,17 @@ pip install pyinstaller
 From your terminal, in the project's root directory, run the following command:
 
 ```bash
-pyinstaller --onefile --windowed --name="Image to EPUB Converter" --icon=icon.ico image-to-epub.py
+pyinstaller --onefile --windowed --name="Image to E-Books Converter" --icon=icon.ico image-to-ebooks.py
 ```
 **Command Breakdown:**
 -   `--onefile`: Bundles everything into a single executable file.
 -   `--windowed`: Prevents the command-line console from appearing when the app runs.
--   `--name="Image to EPUB Converter"`: Sets the final name of your `.exe` file.
+-   `--name="Image to E-Books Converter"`: Sets the final name of your `.exe` file.
 -   `--icon=icon.ico`: (Optional) If you have an icon file named `icon.ico` in the same directory, this will set it as the application's icon.
 
 ### 3. Find Your Executable
 
-After the process completes, look for a new folder named `dist`. Your finished `Image to EPUB Converter.exe` will be inside this folder.
+After the process completes, look for a new folder named `dist`. Your finished `Image to E-Books Converter.exe` will be inside this folder.
 
 ---
 
