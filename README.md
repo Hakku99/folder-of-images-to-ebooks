@@ -1,8 +1,6 @@
 # Image Folder to EPUB Converter
 
-A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless EPUB files, perfectly formatted for e-readers like Kobo and Kindle.
-
-This tool was designed to be fast and intuitive, solving common problems like extra blank pages and confusing chapter breaks.
+A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless EPUB / CBZ files, perfectly formatted for e-readers like Kobo and Kindle.
 
 ![App Screenshot](./assets/image-to-epub-convert.jpg)
 
@@ -10,14 +8,24 @@ This tool was designed to be fast and intuitive, solving common problems like ex
 
 ## ✨ Features
 
--   **User-Friendly Interface:** A clean, modern, and intuitive UI.
--   **Drag & Drop:** Easily add multiple folders by dragging them directly into the application.
--   **Batch Processing:** Convert hundreds of folders in a single click.
--   **Optimized for E-readers:** Automatically formats the EPUB to prevent extra blank pages between images.
--   **No Index Page:** Generated EPUBs flow directly from one image to the next without an intrusive table of contents.
--   **Real-time Logging:** See the status of your conversions as they happen.
--   **Standalone Executable:** Can be easily compiled into a single `.exe` file for distribution.
-
+- **User-Friendly Interface:** 
+   -  A clean, modern, and intuitive UI.
+- **Drag & Drop:**
+   -  Easily add multiple folders by dragging them directly into the application.
+- **Batch Processing:**
+   -  Convert hundreds of folders in a single click.
+- **Optimized for E-readers:**
+   -  Automatically formats the EPUB to prevent extra blank pages between images.
+- **No Index Page:** 
+   -  Generated EPUBs flow directly from one image to the next without an intrusive table of contents.
+- **Real-time Logging:**
+   -  See the status of your conversions as they happen.
+- **Standalone Executable:**
+   -  Can be easily compiled into a single `.exe` file for distribution.
+- **Light & Dark Mode:**
+   -  Toggle between light and dark themes with a single click — fully integrated into the interface.
+- **CBZ Output Option:**
+  - Choose between EPUB and CBZ formats depending on your reading platform.
 ---
 
 ## 📂 Supported File Formats
@@ -42,7 +50,9 @@ This is the easiest way to use the application without any programming knowledge
    - Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
 3. Use the Converter:
    - Drag and drop your image folders into the application window.
-   - Click the `Convert to EPUB button` and choose where to save your files.
+   - CLick on the light bulb button to trigger the color theme (`dark` or `light`).
+   - Pick your desired output format (`epub` or `.cbz`).
+   - Click the `Start Converts` button and choose where to save your files.
    - Enjoy!
 
 ---
