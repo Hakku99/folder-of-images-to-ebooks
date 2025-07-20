@@ -43,8 +43,8 @@ The application can process all common image formats, including:
 This is the easiest way to use the application without any programming knowledge.
 
 1. Download the Application:
-   - Go to the [Releases](https://github.com/Hakku99/folder-of-images-to-epub/releases) page of this repository.
-   - Under the `Latest Release`, find the `Assets` section and click on `Image to EPUB Converter.exe` to download it.
+   - Go to the [Releases](https://github.com/Hakku99/folder-of-images-to-ebooks/releases/) page of this repository.
+   - Under the `Latest Release`, find the `Assets` section and click on `Image.to.E-Books.Converter.exe` to download it.
 2. Run the Application:
    - Double-click the downloaded .exe file to run.
    - Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
@@ -78,8 +78,8 @@ These instructions explain how to run the application directly from the source c
 First, clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/Hakku99/folder-of-images-to-epub.git
-cd folder-of-images-to-epub
+git clone https://github.com/Hakku99/folder-of-images-to-ebooks.git
+cd folder-of-images-to-ebooks
 ```
 
 ### 2. Create `requirements.txt`
