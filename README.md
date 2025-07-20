@@ -1,23 +1,31 @@
-# Image Folder to EPUB Converter
+# Image Folder to E-Books Converter
 
-A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless EPUB files, perfectly formatted for e-readers like Kobo and Kindle.
+A user-friendly desktop application to convert folders of images (like comics or manga chapters) into beautiful, seamless `EPUB` / `CBZ` files, perfectly formatted for e-readers like Kobo and Kindle.
 
-This tool was designed to be fast and intuitive, solving common problems like extra blank pages and confusing chapter breaks.
-
-![App Screenshot](./assets/image-to-epub-convert.jpg)
+![App Screenshot](./assets/image-to-ebooks-converter.jpg)
 
 ---
 
 ## ✨ Features
 
--   **User-Friendly Interface:** A clean, modern, and intuitive UI.
--   **Drag & Drop:** Easily add multiple folders by dragging them directly into the application.
--   **Batch Processing:** Convert hundreds of folders in a single click.
--   **Optimized for E-readers:** Automatically formats the EPUB to prevent extra blank pages between images.
--   **No Index Page:** Generated EPUBs flow directly from one image to the next without an intrusive table of contents.
--   **Real-time Logging:** See the status of your conversions as they happen.
--   **Standalone Executable:** Can be easily compiled into a single `.exe` file for distribution.
-
+- **User-Friendly Interface:** 
+   -  A clean, modern, and intuitive UI.
+- **Drag & Drop:**
+   -  Easily add multiple folders by dragging them directly into the application.
+- **Batch Processing:**
+   -  Convert hundreds of folders in a single click.
+- **Optimized for E-readers:**
+   -  Automatically formats the EPUB to prevent extra blank pages between images.
+- **No Index Page:** 
+   -  Generated EPUBs flow directly from one image to the next without an intrusive table of contents.
+- **Real-time Logging:**
+   -  See the status of your conversions as they happen.
+- **Standalone Executable:**
+   -  Can be easily compiled into a single `.exe` file for distribution.
+- **Light & Dark Mode:**
+   -  Toggle between light and dark themes with a single click — fully integrated into the interface.
+- **CBZ Output Option:**
+  - Choose between EPUB and CBZ formats depending on your reading platform.
 ---
 
 ## 📂 Supported File Formats
@@ -42,7 +50,9 @@ This is the easiest way to use the application without any programming knowledge
    - Windows may show a security warning because it's a new application. If so, click `More info` and then `Run anyway`.
 3. Use the Converter:
    - Drag and drop your image folders into the application window.
-   - Click the `Convert to EPUB button` and choose where to save your files.
+   - CLick on the light bulb button to trigger the color theme (`dark` or `light`).
+   - Pick your desired output format (`epub` or `.cbz`).
+   - Click the `Start Converts` button and choose where to save your files.
    - Enjoy!
 
 ---
@@ -95,9 +105,9 @@ pip install -r requirements.txt
 Once the dependencies are installed, you can run the application with this command:
 
 ```bash
-python image-to-epub.py
+python image-to-ebooks.py
 ```
-*(This assumes your main Python script is named `image-to-epub.py`)*
+*(This assumes your main Python script is named `image-to-ebooks.py`)*
 
 The application's graphical user interface should now appear.
 
@@ -120,17 +130,17 @@ pip install pyinstaller
 From your terminal, in the project's root directory, run the following command:
 
 ```bash
-pyinstaller --onefile --windowed --name="Image to EPUB Converter" --icon=icon.ico image-to-epub.py
+pyinstaller --onefile --windowed --name="Image to E-Books Converter" --icon=icon.ico image-to-ebooks.py
 ```
 **Command Breakdown:**
 -   `--onefile`: Bundles everything into a single executable file.
 -   `--windowed`: Prevents the command-line console from appearing when the app runs.
--   `--name="Image to EPUB Converter"`: Sets the final name of your `.exe` file.
+-   `--name="Image to E-Books Converter"`: Sets the final name of your `.exe` file.
 -   `--icon=icon.ico`: (Optional) If you have an icon file named `icon.ico` in the same directory, this will set it as the application's icon.
 
 ### 3. Find Your Executable
 
-After the process completes, look for a new folder named `dist`. Your finished `Image to EPUB Converter.exe` will be inside this folder.
+After the process completes, look for a new folder named `dist`. Your finished `Image to E-Books Converter.exe` will be inside this folder.
 
 ---
 
