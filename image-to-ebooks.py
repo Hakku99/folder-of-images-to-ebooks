@@ -15,13 +15,13 @@ class Style:
             'BG': '#ffffff', 'FG': '#000000', 'LIST_BG': '#f0f0f0', 'PLACEHOLDER_FG': '#777777',
             'BTN_BG': '#88B6F2', 'BTN_FG': '#ffffff', 'BTN_ACTIVE': '#9BC1F2',
             'BTN_DISABLED_FG': '#aaaaaa',
-            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 11)
+            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 10)
         },
         'dark': {
             'BG': '#2b2b2b', 'FG': '#e0e0e0', 'LIST_BG': '#3c3f41', 'PLACEHOLDER_FG': '#aaaaaa',
             'BTN_BG': '#888888', 'BTN_FG': '#ffffff', 'BTN_ACTIVE': '#666666',
             'BTN_DISABLED_FG': '#aaaaaa',
-            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 11)
+            'FONT': ("Segoe UI", 12), 'FONT_TITLE': ("Segoe UI", 14, "bold"), 'FONT_MONO': ("Consolas", 10)
         }
     }
 
